@@ -37,4 +37,31 @@ CREATE TABLE Favorite(
     FOREIGN KEY (movieID) REFERENCES Movie(id)
 );
 
-INSERT INTO Genre (genreName, descr) VALUES ('Comedy', 'Hahaha!');
+
+INSERT INTO Genre (genreName, descr) VALUES 
+('Drama', 'Dramatic movies'), 
+('Comedy', 'Funny movies'), 
+('Sci-Fi', 'Science Fiction movies'), 
+('Fantasy', 'Fantasy adventures'), 
+('Action', 'Action movies'), 
+('Thriller', 'Suspenseful movies');
+
+INSERT INTO Movie (name, year, genreID) VALUES 
+('Inception', 2010, 5),
+('The Terminator', 1984, 5),
+('Tropic Thunder', 2008, 2),
+('Borat', 2006, 2),
+('Interstellar', 2014, 1),
+('Joker', 2019, 1);
+
+
+INSERT INTO Users (username, name, password, birthYear) VALUES 
+('reimarii', 'Reima Riihimäki', 'qwerty123', 1986),
+('lizzy', 'Lisa Simpson', 'abcdef', 1991),
+('boss', 'Ben Bossy', 'salasana', 1981);
+
+DROP TABLE IF EXISTS Reviews CASCADE;
+DROP TABLE IF EXISTS Favorite CASCADE;
+DROP TABLE IF EXISTS Movie CASCADE;
+DROP TABLE IF EXISTS Users CASCADE;
+DROP TABLE IF EXISTS Genre CASCADE;
